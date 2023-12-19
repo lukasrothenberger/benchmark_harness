@@ -1,0 +1,5 @@
+logs/
+buffer/
+clean_buffer/
+working_copy/
+measurements.csv
