@@ -50,30 +50,30 @@ echo "suggestion_id;time;exit_code;" >> $BENCHMARK_DIR/measurements.csv
     cd $BENCHMARK_DIR
     rm -rf $WORKING_COPY_DIR
 
-# get best option measurement
-    # prepare a clean environment
-    mkdir -p $LOGS_DIR/optimum
-    rm -rf $WORKING_COPY_DIR
-    rm -rf $BUFFER_DIR
-    cp -r $CLEAN_CODE_DIR $WORKING_COPY_DIR
-    cp -r $CLEAN_BUFFER_DIR $BUFFER_DIR
-
-    # apply modifications
-    cd $BUFFER_DIR
-    echo "PWD: $(pwd)"
-    echo "LS: $(ls -a)"
-    discopop_patch_applicator -v -a $(cat optimizer/evolutionary_optimum.txt)
-
-    cd $WORKING_COPY_DIR
-    # build
-    cmake . -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_FLAGS="-fopenmp" -DCMAKE_CXX_FLAGS="-fopenmp"
-    make -j15 1>> $LOGS_DIR/optimum/log.txt 2>> $LOGS_DIR/optimum/log.txt
-    # execute
-    COMMAND="timeout 60 ./prog"
-    /usr/bin/time --format="optimum;%e;%x;" --append --output=$BENCHMARK_DIR/measurements.csv $COMMAND 1>> $LOGS_DIR/optimum/stdout.txt 2>> $LOGS_DIR/optimum/stderr.txt
-    # clean environment
-    cd $BENCHMARK_DIR
-    rm -rf $WORKING_COPY_DIR
+## get best option measurement
+#    # prepare a clean environment
+#    mkdir -p $LOGS_DIR/optimum
+#    rm -rf $WORKING_COPY_DIR
+#    rm -rf $BUFFER_DIR
+#    cp -r $CLEAN_CODE_DIR $WORKING_COPY_DIR
+#    cp -r $CLEAN_BUFFER_DIR $BUFFER_DIR
+#
+#    # apply modifications
+#    cd $BUFFER_DIR
+#    echo "PWD: $(pwd)"
+#    echo "LS: $(ls -a)"
+#    discopop_patch_applicator -v -a $(cat optimizer/evolutionary_optimum.txt)
+#
+#    cd $WORKING_COPY_DIR
+#    # build
+#    cmake . -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_FLAGS="-fopenmp" -DCMAKE_CXX_FLAGS="-fopenmp"
+#    make -j15 1>> $LOGS_DIR/optimum/log.txt 2>> $LOGS_DIR/optimum/log.txt
+#    # execute
+#    COMMAND="timeout 60 ./prog"
+#    /usr/bin/time --format="optimum;%e;%x;" --append --output=$BENCHMARK_DIR/measurements.csv $COMMAND 1>> $LOGS_DIR/optimum/stdout.txt 2>> $LOGS_DIR/optimum/stderr.txt
+#    # clean environment
+#    cd $BENCHMARK_DIR
+#    rm -rf $WORKING_COPY_DIR
 
 # get measurements for all identified suggestions
     # check prerequisites

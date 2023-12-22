@@ -16,7 +16,7 @@ patterns:
 
 patterns_cpu:
 	./prog
-	cd .discopop && discopop_explorer --enable-patterns=reduction,doall,pipeline,geodec && discopop_patch_generator && discopop_optimizer
+	cd .discopop && discopop_explorer --enable-patterns=reduction,doall && discopop_optimizer -v -x && discopop_patch_generator -a optimizer/patterns.json
 
 clean: 
 	rm -f prog
