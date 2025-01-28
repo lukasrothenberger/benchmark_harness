@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:51.584549194 +0000
+@@ -1865,6 +1865,7 @@
+ 	 * initialize
+ 	 * ---------------------------------------------------------------------
+ 	 */
++	#pragma omp parallel for private(i,k,phi1,phi2) 
+ 	for(i=0; i<=ISIZ2+1; i++){
+ 		for(k=0; k<=ISIZ3+1; k++){		
+ 			phi1[k][i]=0.0;

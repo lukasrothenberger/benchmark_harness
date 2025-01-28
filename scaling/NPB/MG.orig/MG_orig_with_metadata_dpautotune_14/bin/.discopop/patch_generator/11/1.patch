@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/MG/MG_orig_with_metadata/MG/mg.cpp	2024-12-13 22:51:17.431230994 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/MG/MG_orig_with_metadata/MG/mg.cpp.discopop_patch_generator.temp	2024-12-13 22:51:30.560300438 +0000
+@@ -555,6 +555,7 @@
+ 					u[2*i3][2*i2][2*i1+1] = u[2*i3][2*i2][2*i1+1]
+ 						+0.5*(z[i3][i2][i1+1]+z[i3][i2][i1]);
+ 				}
++				#pragma omp parallel for private(i1) shared(i2,i3,mm1,u,z1) 
+ 				for(i1 = 0; i1 < mm1-1; i1++){
+ 					u[2*i3][2*i2+1][2*i1] = u[2*i3][2*i2+1][2*i1]
+ 						+0.5 * z1[i1];

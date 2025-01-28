@@ -44,13 +44,17 @@ execute_pattern_analysis_without_metadata:
 
 execute_auto_tuner_with_metadata:
 	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_COMPILE_${BENCHMARK_NAME}.sh DP_COMPILE.sh
+	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_COMPILE_HOTSPOT_${BENCHMARK_NAME}.sh DP_COMPILE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_EXECUTE_${BENCHMARK_NAME}.sh DP_EXECUTE.sh
+	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_EXECUTE_HOTSPOT_${BENCHMARK_NAME}.sh DP_EXECUTE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_with_metadata && echo "$$(pwd)"
 	cd ${BENCHMARK_NAME}_orig_with_metadata && discopop_auto_tuner --log debug --project-path $$(pwd) --dot-dp-path $$(pwd)/bin/.discopop
 
 execute_auto_tuner_without_metadata:
 	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_COMPILE_${BENCHMARK_NAME}.sh DP_COMPILE.sh
+	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_COMPILE_HOTSPOT_${BENCHMARK_NAME}.sh DP_COMPILE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_EXECUTE_${BENCHMARK_NAME}.sh DP_EXECUTE.sh
+	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_EXECUTE_HOTSPOT_${BENCHMARK_NAME}.sh DP_EXECUTE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_without_metadata && echo "$$(pwd)"
 	cd ${BENCHMARK_NAME}_orig_without_metadata && discopop_auto_tuner  --log debug --project-path $$(pwd) --dot-dp-path $$(pwd)/bin/.discopop
 

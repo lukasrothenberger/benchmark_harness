@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:54.880815540 +0000
+@@ -2424,6 +2424,7 @@
+ 			 * fourth-order dissipation
+ 			 * ---------------------------------------------------------------------
+ 			 */
++			#pragma omp parallel for private(m) shared(i,j,rtmp,utmp) 
+ 			for(m=0; m<5; m++){
+ 				rsd[1][j][i][m]=rtmp[1][m]
+ 					-dssp*(+5.0*utmp[1][m]

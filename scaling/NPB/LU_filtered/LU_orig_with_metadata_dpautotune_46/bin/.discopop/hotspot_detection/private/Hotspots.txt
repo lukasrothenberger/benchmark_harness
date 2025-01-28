@@ -1,0 +1,373 @@
+Is this code region a hotspot? 
+1 _Z6domainv at 1:708 is NO
+2  at 1:776 is MAYBE
+3  at 1:777 is MAYBE
+4  at 1:778 is MAYBE
+5  at 1:779 is MAYBE
+6  at 1:785 is MAYBE
+7  at 1:787 is MAYBE
+8  at 1:789 is MAYBE
+9  at 1:791 is MAYBE
+10  at 1:814 is MAYBE
+11  at 1:815 is MAYBE
+12  at 1:816 is MAYBE
+13  at 1:828 is MAYBE
+14  at 1:829 is MAYBE
+15  at 1:834 is MAYBE
+16  at 1:855 is MAYBE
+17  at 1:886 is MAYBE
+18  at 1:897 is MAYBE
+19  at 1:898 is MAYBE
+20  at 1:907 is MAYBE
+21  at 1:925 is MAYBE
+22  at 1:926 is MAYBE
+23  at 1:927 is MAYBE
+24  at 1:939 is MAYBE
+25  at 1:940 is MAYBE
+26  at 1:945 is MAYBE
+27  at 1:966 is MAYBE
+28  at 1:997 is MAYBE
+29  at 1:1008 is MAYBE
+30  at 1:1009 is MAYBE
+31  at 1:1018 is MAYBE
+32  at 1:1036 is MAYBE
+33  at 1:1037 is MAYBE
+34  at 1:1038 is MAYBE
+35  at 1:1050 is MAYBE
+36  at 1:1051 is MAYBE
+37  at 1:1056 is MAYBE
+38  at 1:1077 is MAYBE
+39  at 1:1108 is MAYBE
+40  at 1:1119 is MAYBE
+41  at 1:1120 is MAYBE
+42  at 1:1129 is MAYBE
+43 _Z4erhsv at 1:759 is MAYBE
+45  at 1:1159 is MAYBE
+46  at 1:1160 is MAYBE
+47  at 1:1161 is MAYBE
+48  at 1:1163 is MAYBE
+50 _Z5errorv at 1:1149 is MAYBE
+51  at 1:1191 is MAYBE
+52 _Z5exactiiiPd at 1:1180 is MAYBE
+53  at 1:1868 is NO
+54  at 1:1869 is NO
+55  at 1:1874 is NO
+56  at 1:1875 is NO
+57  at 1:1891 is NO
+58  at 1:1892 is NO
+59  at 1:1909 is NO
+61  at 1:1916 is NO
+63  at 1:1927 is NO
+64  at 1:1928 is NO
+65  at 1:1938 is NO
+66  at 1:1939 is NO
+67  at 1:1956 is NO
+68  at 1:1957 is NO
+69  at 1:1963 is NO
+71  at 1:1974 is NO
+73  at 1:1985 is NO
+74  at 1:1986 is NO
+75 _Z6pintgrv at 1:1840 is NO
+92 _Z10read_inputv at 1:2001 is NO
+93  at 1:2483 is MAYBE
+94  at 1:2484 is MAYBE
+95  at 1:2487 is MAYBE
+96  at 1:2498 is MAYBE
+97  at 1:2499 is MAYBE
+98  at 1:2502 is MAYBE
+99  at 1:2513 is MAYBE
+100  at 1:2514 is MAYBE
+101  at 1:2517 is MAYBE
+102 _Z5setbvv at 1:2470 is MAYBE
+104  at 1:2680 is MAYBE
+105  at 1:2682 is MAYBE
+106  at 1:2684 is MAYBE
+107  at 1:2692 is MAYBE
+108 _Z5setivv at 1:2669 is MAYBE
+109  at 1:2736 is MAYBE
+110  at 1:2737 is MAYBE
+111  at 1:2738 is MAYBE
+112  at 1:2739 is MAYBE
+113  at 1:2748 is NO
+114  at 1:2769 is NO
+115  at 1:2776 is MAYBE
+116  at 1:2786 is MAYBE
+117  at 1:2787 is MAYBE
+118  at 1:2788 is MAYBE
+119  at 1:2789 is MAYBE
+120  at 1:2796 is MAYBE
+121  at 1:2829 is MAYBE
+122  at 1:2869 is MAYBE
+123  at 1:2870 is MAYBE
+124  at 1:2871 is MAYBE
+125  at 1:2872 is MAYBE
+126 _Z4ssori at 1:2714 is MAYBE
+127  at 1:2103 is MAYBE
+128  at 1:2104 is MAYBE
+129  at 1:2105 is MAYBE
+130  at 1:2106 is MAYBE
+131  at 1:2124 is MAYBE
+132  at 1:2125 is MAYBE
+133  at 1:2126 is MAYBE
+134  at 1:2135 is MAYBE
+135  at 1:2136 is MAYBE
+136  at 1:2141 is MAYBE
+137  at 1:2162 is MAYBE
+138  at 1:2193 is MAYBE
+139  at 1:2204 is MAYBE
+140  at 1:2205 is MAYBE
+141  at 1:2214 is MAYBE
+142  at 1:2234 is MAYBE
+143  at 1:2235 is MAYBE
+144  at 1:2236 is MAYBE
+145  at 1:2245 is MAYBE
+146  at 1:2246 is MAYBE
+147  at 1:2251 is MAYBE
+148  at 1:2272 is MAYBE
+149  at 1:2304 is MAYBE
+150  at 1:2305 is MAYBE
+151  at 1:2317 is MAYBE
+152  at 1:2318 is MAYBE
+153  at 1:2319 is MAYBE
+154  at 1:2329 is MAYBE
+155  at 1:2330 is MAYBE
+156  at 1:2350 is MAYBE
+157  at 1:2351 is MAYBE
+158  at 1:2352 is MAYBE
+159  at 1:2360 is MAYBE
+160  at 1:2369 is MAYBE
+161  at 1:2370 is MAYBE
+162  at 1:2375 is MAYBE
+163  at 1:2396 is MAYBE
+164  at 1:2427 is MAYBE
+165  at 1:2438 is MAYBE
+166  at 1:2439 is MAYBE
+167  at 1:2448 is MAYBE
+168 _Z3rhsv at 1:2086 is MAYBE
+169  at 1:1825 is NO
+170  at 1:1826 is MAYBE
+171  at 1:1827 is MAYBE
+172  at 1:1828 is MAYBE
+173  at 1:1829 is MAYBE
+174  at 1:1835 is NO
+175 _Z6l2normiiiiiiiPA13_A13_A5_dPd at 1:1818 is MAYBE
+176  at 1:1227 is MAYBE
+177  at 1:1228 is MAYBE
+178 _Z5jacldi at 1:1213 is MAYBE
+179  at 1:405 is MAYBE
+180  at 1:406 is MAYBE
+181  at 1:407 is MAYBE
+182  at 1:417 is MAYBE
+183  at 1:418 is MAYBE
+184  at 1:419 is MAYBE
+185  at 1:439 is MAYBE
+186 _Z4bltsiiiidPA13_A13_A5_dPA13_A5_S_S5_S5_S5_iiiiii at 1:396 is MAYBE
+187  at 1:1514 is MAYBE
+188  at 1:1515 is MAYBE
+189 _Z4jacui at 1:1500 is MAYBE
+190  at 1:573 is MAYBE
+191  at 1:574 is MAYBE
+192  at 1:575 is MAYBE
+193  at 1:585 is MAYBE
+194  at 1:586 is MAYBE
+195  at 1:587 is MAYBE
+196  at 1:605 is MAYBE
+197 _Z4butsiiiidPA13_A13_A5_dPvPA13_A5_S_S6_S6_S6_iiiiii at 1:563 is MAYBE
+198  at 1:2961 is NO
+200  at 1:3233 is NO
+201  at 1:3248 is NO
+202 _Z6verifyPdS_dPcPi at 1:2948 is MAYBE
+205 main at 1:214 is MAYBE
+206 _Z15c_print_resultsPcciiiiddS_iS_S_S_S_S_S_S_S_S_S_ at 2:70 is NO
+207 _Z12elapsed_timev at 3:53 is NO
+208 _Z11timer_cleari at 3:64 is NO
+209 _Z11timer_starti at 3:71 is NO
+210 _Z10timer_stopi at 3:78 is NO
+212 _Z6wtime_Pd at 4:47 is NO
+214  at 1:776 is MAYBE
+215  at 1:777 is MAYBE
+216  at 1:778 is MAYBE
+217  at 1:779 is MAYBE
+218  at 1:785 is MAYBE
+219  at 1:787 is MAYBE
+220  at 1:789 is MAYBE
+221  at 1:791 is MAYBE
+222  at 1:814 is MAYBE
+223  at 1:815 is MAYBE
+224  at 1:816 is MAYBE
+225  at 1:828 is MAYBE
+226  at 1:829 is MAYBE
+227  at 1:834 is MAYBE
+228  at 1:855 is MAYBE
+229  at 1:886 is MAYBE
+230  at 1:897 is MAYBE
+231  at 1:898 is MAYBE
+232  at 1:907 is MAYBE
+233  at 1:925 is MAYBE
+234  at 1:926 is MAYBE
+235  at 1:927 is MAYBE
+236  at 1:939 is MAYBE
+237  at 1:940 is MAYBE
+238  at 1:945 is MAYBE
+239  at 1:966 is MAYBE
+240  at 1:997 is MAYBE
+241  at 1:1008 is MAYBE
+242  at 1:1009 is MAYBE
+243  at 1:1018 is MAYBE
+244  at 1:1036 is MAYBE
+245  at 1:1037 is MAYBE
+246  at 1:1038 is MAYBE
+247  at 1:1050 is MAYBE
+248  at 1:1051 is MAYBE
+249  at 1:1056 is MAYBE
+250  at 1:1077 is MAYBE
+251  at 1:1108 is MAYBE
+252  at 1:1119 is MAYBE
+253  at 1:1120 is MAYBE
+254  at 1:1129 is MAYBE
+255 _Z4erhsv at 1:759 is MAYBE
+257  at 1:1159 is MAYBE
+258  at 1:1160 is MAYBE
+259  at 1:1161 is MAYBE
+260  at 1:1163 is MAYBE
+261  at 1:1170 is NO
+262 _Z5errorv at 1:1149 is MAYBE
+263  at 1:1191 is MAYBE
+264 _Z5exactiiiPd at 1:1180 is MAYBE
+265  at 1:1868 is MAYBE
+266  at 1:1869 is MAYBE
+267  at 1:1874 is MAYBE
+268  at 1:1875 is MAYBE
+269  at 1:1891 is NO
+270  at 1:1892 is NO
+271  at 1:1909 is NO
+272  at 1:1910 is NO
+273  at 1:1916 is NO
+274  at 1:1917 is NO
+275  at 1:1927 is MAYBE
+276  at 1:1928 is NO
+277  at 1:1938 is NO
+278  at 1:1939 is NO
+279  at 1:1956 is NO
+280  at 1:1957 is NO
+281  at 1:1963 is MAYBE
+282  at 1:1964 is MAYBE
+283  at 1:1974 is MAYBE
+284  at 1:1975 is MAYBE
+285  at 1:1985 is NO
+286  at 1:1986 is NO
+287 _Z6pintgrv at 1:1840 is MAYBE
+304 _Z10read_inputv at 1:2001 is NO
+305  at 1:2483 is MAYBE
+306  at 1:2484 is MAYBE
+307  at 1:2487 is MAYBE
+308  at 1:2498 is MAYBE
+309  at 1:2499 is MAYBE
+310  at 1:2502 is MAYBE
+311  at 1:2513 is MAYBE
+312  at 1:2514 is MAYBE
+313  at 1:2517 is MAYBE
+314 _Z5setbvv at 1:2470 is MAYBE
+315 _Z8setcoeffv at 1:2525 is NO
+316  at 1:2680 is MAYBE
+317  at 1:2682 is MAYBE
+318  at 1:2684 is MAYBE
+319  at 1:2692 is MAYBE
+320 _Z5setivv at 1:2669 is MAYBE
+321  at 1:2736 is MAYBE
+322  at 1:2737 is MAYBE
+323  at 1:2738 is MAYBE
+324  at 1:2739 is MAYBE
+325  at 1:2748 is NO
+326  at 1:2769 is NO
+327  at 1:2776 is YES
+328  at 1:2786 is YES
+329  at 1:2787 is YES
+330  at 1:2788 is YES
+331  at 1:2789 is MAYBE
+332  at 1:2796 is YES
+333  at 1:2829 is YES
+334  at 1:2869 is YES
+335  at 1:2870 is YES
+336  at 1:2871 is YES
+337  at 1:2872 is MAYBE
+338 _Z4ssori at 1:2714 is YES
+339  at 1:2103 is YES
+340  at 1:2104 is YES
+341  at 1:2105 is YES
+342  at 1:2106 is MAYBE
+343  at 1:2124 is YES
+344  at 1:2125 is YES
+345  at 1:2126 is MAYBE
+346  at 1:2135 is YES
+347  at 1:2136 is MAYBE
+348  at 1:2141 is MAYBE
+349  at 1:2162 is MAYBE
+350  at 1:2193 is MAYBE
+351  at 1:2204 is YES
+352  at 1:2205 is YES
+353  at 1:2214 is MAYBE
+354  at 1:2234 is YES
+355  at 1:2235 is YES
+356  at 1:2236 is MAYBE
+357  at 1:2245 is YES
+358  at 1:2246 is MAYBE
+359  at 1:2251 is MAYBE
+360  at 1:2272 is MAYBE
+361  at 1:2304 is MAYBE
+362  at 1:2305 is MAYBE
+363  at 1:2317 is YES
+364  at 1:2318 is YES
+365  at 1:2319 is YES
+366  at 1:2329 is MAYBE
+367  at 1:2330 is MAYBE
+368  at 1:2350 is YES
+369  at 1:2351 is YES
+370  at 1:2352 is MAYBE
+371  at 1:2360 is MAYBE
+372  at 1:2369 is YES
+373  at 1:2370 is MAYBE
+374  at 1:2375 is MAYBE
+375  at 1:2396 is MAYBE
+376  at 1:2427 is MAYBE
+377  at 1:2438 is YES
+378  at 1:2439 is YES
+379  at 1:2448 is MAYBE
+380 _Z3rhsv at 1:2086 is YES
+382  at 1:1826 is MAYBE
+383  at 1:1827 is MAYBE
+384  at 1:1828 is MAYBE
+385  at 1:1829 is MAYBE
+386  at 1:1835 is NO
+387 _Z6l2normiiiiiiiPA65_A65_A5_dPd at 1:1818 is MAYBE
+388  at 1:1227 is YES
+389  at 1:1228 is YES
+390 _Z5jacldi at 1:1213 is YES
+391  at 1:405 is YES
+392  at 1:406 is YES
+393  at 1:407 is YES
+394  at 1:417 is YES
+395  at 1:418 is YES
+396  at 1:419 is YES
+397  at 1:439 is YES
+398 _Z4bltsiiiidPA65_A65_A5_dPA65_A5_S_S5_S5_S5_iiiiii at 1:396 is YES
+399  at 1:1514 is YES
+400  at 1:1515 is YES
+401 _Z4jacui at 1:1500 is YES
+402  at 1:573 is YES
+403  at 1:574 is YES
+404  at 1:575 is YES
+405  at 1:585 is YES
+406  at 1:586 is YES
+407  at 1:587 is YES
+408  at 1:605 is YES
+409 _Z4butsiiiidPA65_A65_A5_dPvPA65_A5_S_S6_S6_S6_iiiiii at 1:563 is YES
+411  at 1:3207 is NO
+412  at 1:3233 is NO
+413  at 1:3248 is NO
+414 _Z6verifyPdS_dPcPi at 1:2948 is MAYBE
+417 main at 1:214 is YES
+Number of YES code regions: 53 
+Number of MAYBE code regions: 259 
+Number of NO code regions: 56 
+Number of Non-zero code regions: 368 

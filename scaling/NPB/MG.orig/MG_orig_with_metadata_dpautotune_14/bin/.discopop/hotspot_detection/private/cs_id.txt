@@ -1,0 +1,200 @@
+1 loop 144 1
+2 loop 178 1
+3 loop 183 1
+4 loop 188 1
+5 loop 189 1
+6 loop 203 1
+7 loop 296 1
+8 loop 306 1
+9 loop 399 1
+10 func 119 1 main
+11 loop 1041 1
+12 loop 1042 1
+13 loop 1046 1
+14 loop 1052 1
+15 loop 1053 1
+16 loop 1074 1
+17 func 1032 1 _ZL5setupPiS_S_i
+18 loop 1123 1
+19 loop 1124 1
+20 loop 1125 1
+21 func 1114 1 _ZL5zero3Pviii
+22 loop 1170 1
+23 loop 1172 1
+24 loop 1185 1
+25 loop 1195 1
+26 loop 1196 1
+27 loop 1197 1
+28 loop 1223 1
+29 loop 1254 1
+30 loop 1255 1
+31 loop 1256 1
+32 loop 1261 1
+33 loop 1264 1
+34 func 1139 1 _ZL5zran3Pviiiiii
+35 loop 756 1
+36 loop 757 1
+37 loop 758 1
+38 func 738 1 _ZL7norm2u3PviiiPdS0_iii
+39 loop 909 1
+40 loop 910 1
+41 loop 911 1
+42 loop 917 1
+43 func 891 1 _ZL5residPvS_S_iiiPdi
+44 loop 685 1
+45 loop 699 1
+46 func 676 1 _ZL4mg3PPdS_S_S_S_iiii
+47 loop 786 1
+48 func 776 1 _ZL5powerdi
+49 loop 423 1
+50 loop 445 1
+51 func 418 1 _ZL6bubblePA10_dPA10_iS2_S2_ii
+52 loop 485 1
+53 loop 486 1
+54 loop 492 1
+55 loop 493 1
+56 loop 499 1
+57 loop 500 1
+58 func 474 1 _ZL5comm3Pviiii
+59 func 870 1 _ZL7rep_nrmPviiiPci
+60 loop 1102 1
+61 loop 1103 1
+62 loop 1104 1
+63 func 1086 1 _ZL7showallPviii
+64 loop 993 1
+65 loop 995 1
+66 loop 997 1
+67 loop 1004 1
+68 func 962 1 _ZL5rprj3PviiiS_iiii
+69 loop 823 1
+70 loop 824 1
+71 loop 825 1
+72 loop 831 1
+73 func 808 1 _ZL5psinvPvS_iiiPdi
+74 loop 545 1
+75 loop 546 1
+76 loop 547 1
+77 loop 552 1
+78 loop 558 1
+79 loop 564 1
+80 loop 570 1
+81 loop 600 1
+82 loop 601 1
+83 loop 602 1
+84 loop 607 1
+85 loop 613 1
+86 loop 614 1
+87 loop 619 1
+88 loop 627 1
+89 loop 628 1
+90 loop 629 1
+91 loop 634 1
+92 loop 641 1
+93 loop 642 1
+94 loop 648 1
+95 func 520 1 _ZL6interpPviiiS_iiii
+96 func 70 2 _Z15c_print_resultsPcciiiiddS_iS_S_S_S_S_S_S_S_S_S_
+97 func 80 3 _Z6randlcPdd
+98 loop 155 3
+99 func 136 3 _Z6vranlciPddS_
+100 func 53 4 _Z12elapsed_timev
+101 func 64 4 _Z11timer_cleari
+102 func 71 4 _Z11timer_starti
+103 func 78 4 _Z10timer_stopi
+104 func 89 4 _Z10timer_readi
+105 func 47 5 _Z6wtime_Pd
+106 loop 144 1
+107 loop 178 1
+108 loop 183 1
+109 loop 188 1
+110 loop 189 1
+111 loop 203 1
+112 loop 296 1
+113 loop 306 1
+114 loop 399 1
+115 func 119 1 main
+116 loop 1041 1
+117 loop 1042 1
+118 loop 1046 1
+119 loop 1052 1
+120 loop 1053 1
+121 loop 1074 1
+122 func 1032 1 _ZL5setupPiS_S_i
+123 loop 1123 1
+124 loop 1124 1
+125 loop 1125 1
+126 func 1114 1 _ZL5zero3Pviii
+127 loop 1170 1
+128 loop 1172 1
+129 loop 1185 1
+130 loop 1195 1
+131 loop 1196 1
+132 loop 1197 1
+133 loop 1223 1
+134 loop 1254 1
+135 loop 1255 1
+136 loop 1256 1
+137 loop 1261 1
+138 loop 1264 1
+139 func 1139 1 _ZL5zran3Pviiiiii
+140 loop 756 1
+141 loop 757 1
+142 loop 758 1
+143 func 738 1 _ZL7norm2u3PviiiPdS0_iii
+144 loop 909 1
+145 loop 910 1
+146 loop 911 1
+147 loop 917 1
+148 func 891 1 _ZL5residPvS_S_iiiPdi
+149 loop 685 1
+150 loop 699 1
+151 func 676 1 _ZL4mg3PPdS_S_S_S_iiii
+152 loop 786 1
+153 func 776 1 _ZL5powerdi
+154 loop 423 1
+155 loop 445 1
+156 func 418 1 _ZL6bubblePA10_dPA10_iS2_S2_ii
+157 loop 485 1
+158 loop 486 1
+159 loop 492 1
+160 loop 493 1
+161 loop 499 1
+162 loop 500 1
+163 func 474 1 _ZL5comm3Pviiii
+164 func 870 1 _ZL7rep_nrmPviiiPci
+165 loop 1102 1
+166 loop 1103 1
+167 loop 1104 1
+168 func 1086 1 _ZL7showallPviii
+169 loop 993 1
+170 loop 995 1
+171 loop 997 1
+172 loop 1004 1
+173 func 962 1 _ZL5rprj3PviiiS_iiii
+174 loop 823 1
+175 loop 824 1
+176 loop 825 1
+177 loop 831 1
+178 func 808 1 _ZL5psinvPvS_iiiPdi
+179 loop 545 1
+180 loop 546 1
+181 loop 547 1
+182 loop 552 1
+183 loop 558 1
+184 loop 564 1
+185 loop 570 1
+186 loop 600 1
+187 loop 601 1
+188 loop 602 1
+189 loop 607 1
+190 loop 613 1
+191 loop 614 1
+192 loop 619 1
+193 loop 627 1
+194 loop 628 1
+195 loop 629 1
+196 loop 634 1
+197 loop 641 1
+198 loop 642 1
+199 loop 648 1
+200 func 520 1 _ZL6interpPviiiS_iiii

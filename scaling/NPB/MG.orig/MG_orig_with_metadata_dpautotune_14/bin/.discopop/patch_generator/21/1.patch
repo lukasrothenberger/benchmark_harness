@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/MG/MG_orig_with_metadata/MG/mg.cpp	2024-12-13 22:51:17.431230994 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/MG/MG_orig_with_metadata/MG/mg.cpp.discopop_patch_generator.temp	2024-12-13 22:51:30.612304675 +0000
+@@ -482,6 +482,7 @@
+ 	int i1, i2, i3;
+ 	if(timeron){timer_start(T_COMM3);}
+ 	/* axis = 1 */
++	#pragma omp parallel for private(i2,i3) shared(n1,n2,n3,u) 
+ 	for(i3 = 1; i3 < n3-1; i3++){
+ 		for(i2 = 1; i2 < n2-1; i2++){
+ 			u[i3][i2][0] = u[i3][i2][n1-2];

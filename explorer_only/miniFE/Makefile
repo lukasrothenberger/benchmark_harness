@@ -32,7 +32,7 @@ create_code_version_without_metadata:
 	sed -i 's/\/miniFE_orig\//\/miniFE_orig_without_metadata\//g' miniFE_orig_without_metadata/src/.discopop/FileMapping.txt
 
 execute_pattern_analysis_with_metadata:
-	cd miniFE_orig_with_metadata/src/.discopop && discopop_explorer --enable-patterns doall,reduction
+	cd miniFE_orig_with_metadata/src/.discopop && discopop_explorer --enable-patterns doall,reduction --plot-pet
 	cd miniFE_orig_with_metadata/src/.discopop && discopop_patch_generator --log info
 
 execute_pattern_analysis_without_metadata:

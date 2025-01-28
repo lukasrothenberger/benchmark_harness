@@ -1,0 +1,17 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/MG/MG_orig_with_metadata/common/c_randdp.cpp	2024-12-13 22:51:17.439231645 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/MG/MG_orig_with_metadata/common/c_randdp.cpp.discopop_patch_generator.temp	2024-12-13 22:51:30.500295551 +0000
+@@ -152,6 +152,7 @@
+ 	 * generate N results. this loop is not vectorizable.
+ 	 * ---------------------------------------------------------------------
+ 	 */
++	#pragma omp parallel for private(i,t1,t2,t3,t4,x,x1,x2,z) shared(a1,a2,n,y) 
+ 	for(i=0; i<n; i++){
+ 		/*
+ 		 * ---------------------------------------------------------------------
+@@ -172,4 +173,4 @@
+ 		y[i] = r46 * x;
+ 	}
+ 	*x_seed = x;
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,1110 @@
+cp -r ../../../auto_tuner_benchmarks/NPB/$(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)/$(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_with_metadata_* . || true
+cp -r ../../../auto_tuner_benchmarks/NPB/$(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)/$(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_without_metadata_* . || true
+cp -r ../../../clean_code/NPB-SER/ sequential || true
+echo "Input;" >> measurements_inputs.csv
+echo "Sequential;" >> measurements_sequential.csv
+echo "Vanilla;" >> measurements_vanilla.csv
+echo "Extended;" >> measurements_extended.csv
+cd $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_with_metadata_* && rm -fr bin/* || true
+cd $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_without_metadata_* && rm -rf bin/* || true
+cd sequential && rm -rf bin/* || true
+rm -f measurements_sequential.csv
+rm -f measurements_vanilla.csv
+rm -f measurements_extended.csv
+rm -f measurements_inputs.csv
+echo "LOWER: $(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]')"
+LOWER: lu
+echo "BASEDIR: /home/lukas/git/benchmark_harness/scaling/NPB/LU"
+BASEDIR: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+for INPUT in S A B C ; do \
+	echo "INPUT: ${INPUT}" ; \
+	echo "PWD1: $(pwd)" ; \
+	cd /home/lukas/git/benchmark_harness/scaling/NPB/LU && cd $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_with_metadata_* && CC="clang++ -fopenmp" make $(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]') CLASS=${INPUT} && cd .. || true ; \
+	echo "PWD2: $(pwd)" ; \
+	cd /home/lukas/git/benchmark_harness/scaling/NPB/LU && cd $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_without_metadata_* && CC="clang++ -fopenmp" make $(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]') CLASS=${INPUT} && cd .. || true ; \
+	echo "PWD3: $(pwd)" ; \
+	cd /home/lukas/git/benchmark_harness/scaling/NPB/LU && cd sequential && CC="clang++" make $(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]') CLASS=${INPUT} && cd .. ; \
+done
+INPUT: S
+PWD1: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=S
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird betreten
+clang++ -g -fno-discard-value-names -o setparams setparams.cpp
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird verlassen
+../sys/setparams lu S
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.S lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird verlassen
+PWD2: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=S
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird betreten
+clang++ -g -fno-discard-value-names -o setparams setparams.cpp
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird verlassen
+../sys/setparams lu S
+make.def modified. Rebuilding npbparams.hpp just in case
+rm -f npbparams.hpp
+../sys/setparams lu S
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.S lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird verlassen
+PWD3: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=S
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird betreten
+clang++ -g -fno-discard-value-names -o setparams setparams.cpp
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird verlassen
+../sys/setparams lu S
+clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+cd ../common; clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp c_print_results.cpp
+cd ../common; clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp c_timers.cpp
+cd ../common; clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp -o c_wtime.o ../common/wtime.cpp
+clang++ -O3 -mcmodel=medium -fopenmp -o ../bin/lu.S lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird verlassen
+INPUT: A
+PWD1: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=A
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird verlassen
+../sys/setparams lu A
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.A lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird verlassen
+PWD2: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=A
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird verlassen
+../sys/setparams lu A
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.A lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird verlassen
+PWD3: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=A
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird verlassen
+../sys/setparams lu A
+clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -O3 -mcmodel=medium -fopenmp -o ../bin/lu.A lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird verlassen
+INPUT: B
+PWD1: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=B
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird verlassen
+../sys/setparams lu B
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.B lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird verlassen
+PWD2: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=B
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird verlassen
+../sys/setparams lu B
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.B lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird verlassen
+PWD3: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=B
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird verlassen
+../sys/setparams lu B
+clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -O3 -mcmodel=medium -fopenmp -o ../bin/lu.B lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird verlassen
+INPUT: C
+PWD1: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=C
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/sys“ wird verlassen
+../sys/setparams lu C
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.C lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_with_metadata_dpautotune_54“ wird verlassen
+PWD2: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=C
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/sys“ wird verlassen
+../sys/setparams lu C
+clang++ -fopenmp  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -fopenmp -O3 -mcmodel=medium -fopenmp -o ../bin/lu.C lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/LU_orig_without_metadata_dpautotune_18“ wird verlassen
+PWD3: /home/lukas/git/benchmark_harness/scaling/NPB/LU
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird betreten
+   ===========================================
+   =      NAS PARALLEL BENCHMARKS 4.1        =
+   =      Serial Versions                    =
+   =      C++                                =
+   ===========================================
+
+cd LU; make CLASS=C
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird betreten
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird betreten
+make[3]: Für das Ziel „all“ ist nichts zu tun.
+make[3]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/sys“ wird verlassen
+../sys/setparams lu C
+clang++  -c -I../common  -O3 -mcmodel=medium -fopenmp lu.cpp
+clang++ -O3 -mcmodel=medium -fopenmp -o ../bin/lu.C lu.o ../common/c_print_results.o ../common/c_timers.o ../common/c_wtime.o -lm 
+make[2]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential/LU“ wird verlassen
+make[1]: Verzeichnis „/home/lukas/git/benchmark_harness/scaling/NPB/LU/sequential“ wird verlassen
+for input in S A B C ; do \
+	echo "$input" >> measurements_inputs.csv ; \
+	/usr/bin/time --append -o measurements_sequential.csv --format=";%e;" sequential/bin/$(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]').$input || true ; \
+	/usr/bin/time --append -o measurements_vanilla.csv --format="%e;" $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_without_metadata_*/bin/$(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]').$input || true  ; \
+	/usr/bin/time --append -o measurements_extended.csv --format="%e;" $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU)_orig_with_metadata_*/bin/$(echo $(basename /home/lukas/git/benchmark_harness/scaling/NPB/LU) | tr '[:upper:]' '[:lower:]').$input || true ; \
+    done
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:   12x  12x  12
+ Iterations:   50
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   50
+
+ Verification being performed for class_npb S
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   1.6196343210978E-02 1.6196343210977E-02 8.8041027451588E-14
+           2   2.1976745164824E-03 2.1976745164821E-03 1.2886057754655E-13
+           3   1.5179927653395E-03 1.5179927653399E-03 3.0026400897295E-13
+           4   1.5029584436013E-03 1.5029584435994E-03 1.2375972569551E-12
+           5   3.4264073155897E-02 3.4264073155896E-02 1.3770831719827E-14
+ Comparison of RMS-norms of solution error
+           1   6.4223319957955E-04 6.4223319957961E-04 8.9304469096313E-14
+           2   8.4144342047351E-05 8.4144342047348E-05 3.7849768673502E-14
+           3   5.8588269616504E-05 5.8588269616485E-05 3.2303572536515E-13
+           4   5.8474222595145E-05 5.8474222595157E-05 2.0870821641416E-13
+           5   1.3103347914112E-03 1.3103347914111E-03 5.5106424068747E-14
+ Comparison of surface integral
+               7.8418928865937E+00 7.8418928865937E+00 1.1326071811291E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        S
+ Size            =             12x  12x  12
+ Iterations      =                       50
+ Time in seconds =                     0.02
+ Mop/s total     =                  5222.50
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:   12x  12x  12
+ Iterations:   50
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   50
+
+ Verification being performed for class_npb S
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   1.6196343210978E-02 1.6196343210977E-02 8.8041027451588E-14
+           2   2.1976745164824E-03 2.1976745164821E-03 1.2886057754655E-13
+           3   1.5179927653395E-03 1.5179927653399E-03 3.0026400897295E-13
+           4   1.5029584436013E-03 1.5029584435994E-03 1.2375972569551E-12
+           5   3.4264073155897E-02 3.4264073155896E-02 1.3770831719827E-14
+ Comparison of RMS-norms of solution error
+           1   6.4223319957955E-04 6.4223319957961E-04 8.9304469096313E-14
+           2   8.4144342047351E-05 8.4144342047348E-05 3.7849768673502E-14
+           3   5.8588269616504E-05 5.8588269616485E-05 3.2303572536515E-13
+           4   5.8474222595145E-05 5.8474222595157E-05 2.0870821641416E-13
+           5   1.3103347914112E-03 1.3103347914111E-03 5.5106424068747E-14
+ Comparison of surface integral
+               7.8418928865937E+00 7.8418928865937E+00 1.1326071811291E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        S
+ Size            =             12x  12x  12
+ Iterations      =                       50
+ Time in seconds =                     0.13
+ Mop/s total     =                   809.66
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:   12x  12x  12
+ Iterations:   50
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   50
+
+ Verification being performed for class_npb S
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   1.6196343210978E-02 1.6196343210977E-02 8.8041027451588E-14
+           2   2.1976745164824E-03 2.1976745164821E-03 1.2886057754655E-13
+           3   1.5179927653395E-03 1.5179927653399E-03 3.0026400897295E-13
+           4   1.5029584436013E-03 1.5029584435994E-03 1.2375972569551E-12
+           5   3.4264073155897E-02 3.4264073155896E-02 1.3770831719827E-14
+ Comparison of RMS-norms of solution error
+           1   6.4223319957955E-04 6.4223319957961E-04 8.9304469096313E-14
+           2   8.4144342047351E-05 8.4144342047348E-05 3.7849768673502E-14
+           3   5.8588269616504E-05 5.8588269616485E-05 3.2303572536515E-13
+           4   5.8474222595145E-05 5.8474222595157E-05 2.0870821641416E-13
+           5   1.3103347914112E-03 1.3103347914111E-03 5.5106424068747E-14
+ Comparison of surface integral
+               7.8418928865937E+00 7.8418928865937E+00 1.1326071811291E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        S
+ Size            =             12x  12x  12
+ Iterations      =                       50
+ Time in seconds =                     0.15
+ Mop/s total     =                   664.56
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:   64x  64x  64
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb A
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   7.7902107606689E+02 7.7902107606689E+02 1.0215485671699E-15
+           2   6.3402765259693E+01 6.3402765259693E+01 6.7240859244839E-16
+           3   1.9499249727292E+02 1.9499249727292E+02 1.0203057491713E-15
+           4   1.7845301160419E+02 1.7845301160419E+02 1.4334046961393E-15
+           5   1.8384760349464E+03 1.8384760349464E+03 1.2367508257994E-16
+ Comparison of RMS-norms of solution error
+           1   2.9964085685472E+01 2.9964085685472E+01 0.0000000000000E+00
+           2   2.8194576365003E+00 2.8194576365003E+00 0.0000000000000E+00
+           3   7.3473412698775E+00 7.3473412698775E+00 0.0000000000000E+00
+           4   6.7139225687777E+00 6.7139225687777E+00 0.0000000000000E+00
+           5   7.0715315688393E+01 7.0715315688393E+01 2.0095865480997E-16
+ Comparison of surface integral
+               2.6030925604886E+01 2.6030925604886E+01 4.0944149271438E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        A
+ Size            =             64x  64x  64
+ Iterations      =                      250
+ Time in seconds =                    27.72
+ Mop/s total     =                  4303.75
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:   64x  64x  64
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb A
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   7.7902107606689E+02 7.7902107606689E+02 1.0215485671699E-15
+           2   6.3402765259693E+01 6.3402765259693E+01 6.7240859244839E-16
+           3   1.9499249727292E+02 1.9499249727292E+02 1.0203057491713E-15
+           4   1.7845301160419E+02 1.7845301160419E+02 1.4334046961393E-15
+           5   1.8384760349464E+03 1.8384760349464E+03 1.2367508257994E-16
+ Comparison of RMS-norms of solution error
+           1   2.9964085685472E+01 2.9964085685472E+01 0.0000000000000E+00
+           2   2.8194576365003E+00 2.8194576365003E+00 0.0000000000000E+00
+           3   7.3473412698775E+00 7.3473412698775E+00 0.0000000000000E+00
+           4   6.7139225687777E+00 6.7139225687777E+00 0.0000000000000E+00
+           5   7.0715315688393E+01 7.0715315688393E+01 2.0095865480997E-16
+ Comparison of surface integral
+               2.6030925604886E+01 2.6030925604886E+01 4.0944149271438E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        A
+ Size            =             64x  64x  64
+ Iterations      =                      250
+ Time in seconds =                   192.39
+ Mop/s total     =                   620.08
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:   64x  64x  64
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb A
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   7.7902107606689E+02 7.7902107606689E+02 1.0215485671699E-15
+           2   6.3402765259693E+01 6.3402765259693E+01 6.7240859244839E-16
+           3   1.9499249727292E+02 1.9499249727292E+02 1.0203057491713E-15
+           4   1.7845301160419E+02 1.7845301160419E+02 1.4334046961393E-15
+           5   1.8384760349464E+03 1.8384760349464E+03 1.2367508257994E-16
+ Comparison of RMS-norms of solution error
+           1   2.9964085685472E+01 2.9964085685472E+01 0.0000000000000E+00
+           2   2.8194576365003E+00 2.8194576365003E+00 0.0000000000000E+00
+           3   7.3473412698775E+00 7.3473412698775E+00 0.0000000000000E+00
+           4   6.7139225687777E+00 6.7139225687777E+00 0.0000000000000E+00
+           5   7.0715315688393E+01 7.0715315688393E+01 2.0095865480997E-16
+ Comparison of surface integral
+               2.6030925604886E+01 2.6030925604886E+01 4.0944149271438E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        A
+ Size            =             64x  64x  64
+ Iterations      =                      250
+ Time in seconds =                    89.17
+ Mop/s total     =                  1337.83
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:  102x 102x 102
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb B
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   3.5532672969983E+03 3.5532672969983E+03 1.6637407398307E-15
+           2   2.6214750795311E+02 2.6214750795311E+02 2.1683753282513E-16
+           3   8.8333721850952E+02 8.8333721850952E+02 2.5740302874013E-16
+           4   7.7812774739425E+02 7.7812774739425E+02 2.6298549124380E-15
+           5   7.3087969592545E+03 7.3087969592545E+03 7.4663015555903E-16
+ Comparison of RMS-norms of solution error
+           1   1.1401176380213E+02 1.1401176380213E+02 0.0000000000000E+00
+           2   8.1098963655422E+00 8.1098963655422E+00 2.1903570148538E-16
+           3   2.8480597317698E+01 2.8480597317698E+01 0.0000000000000E+00
+           4   2.5905394567833E+01 2.5905394567833E+01 1.3714184779150E-16
+           5   2.6054907504857E+02 2.6054907504857E+02 0.0000000000000E+00
+ Comparison of surface integral
+               4.7887162703308E+01 4.7887162703308E+01 0.0000000000000E+00
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      250
+ Time in seconds =                   123.89
+ Mop/s total     =                  4026.38
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:  102x 102x 102
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb B
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   3.5532672969983E+03 3.5532672969983E+03 1.6637407398307E-15
+           2   2.6214750795311E+02 2.6214750795311E+02 2.1683753282513E-16
+           3   8.8333721850952E+02 8.8333721850952E+02 2.5740302874013E-16
+           4   7.7812774739425E+02 7.7812774739425E+02 2.6298549124380E-15
+           5   7.3087969592545E+03 7.3087969592545E+03 7.4663015555903E-16
+ Comparison of RMS-norms of solution error
+           1   1.1401176380213E+02 1.1401176380213E+02 0.0000000000000E+00
+           2   8.1098963655422E+00 8.1098963655422E+00 2.1903570148538E-16
+           3   2.8480597317698E+01 2.8480597317698E+01 0.0000000000000E+00
+           4   2.5905394567833E+01 2.5905394567833E+01 1.3714184779150E-16
+           5   2.6054907504857E+02 2.6054907504857E+02 0.0000000000000E+00
+ Comparison of surface integral
+               4.7887162703308E+01 4.7887162703308E+01 0.0000000000000E+00
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      250
+ Time in seconds =                   799.68
+ Mop/s total     =                   623.78
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:  102x 102x 102
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb B
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   3.5532672969983E+03 3.5532672969983E+03 1.6637407398307E-15
+           2   2.6214750795311E+02 2.6214750795311E+02 2.1683753282513E-16
+           3   8.8333721850952E+02 8.8333721850952E+02 2.5740302874013E-16
+           4   7.7812774739425E+02 7.7812774739425E+02 2.6298549124380E-15
+           5   7.3087969592545E+03 7.3087969592545E+03 7.4663015555903E-16
+ Comparison of RMS-norms of solution error
+           1   1.1401176380213E+02 1.1401176380213E+02 0.0000000000000E+00
+           2   8.1098963655422E+00 8.1098963655422E+00 2.1903570148538E-16
+           3   2.8480597317698E+01 2.8480597317698E+01 0.0000000000000E+00
+           4   2.5905394567833E+01 2.5905394567833E+01 1.3714184779150E-16
+           5   2.6054907504857E+02 2.6054907504857E+02 0.0000000000000E+00
+ Comparison of surface integral
+               4.7887162703308E+01 4.7887162703308E+01 0.0000000000000E+00
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      250
+ Time in seconds =                   361.54
+ Mop/s total     =                  1379.71
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:  162x 162x 162
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb C
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   1.0376698032354E+04 1.0376698032354E+04 3.5059117994460E-15
+           2   8.9221245880100E+02 8.9221245880101E+02 9.6840159332160E-15
+           3   2.5623881458267E+03 2.5623881458266E+03 1.7214602365309E-14
+           4   2.1919434385783E+03 2.1919434385783E+03 7.6761341951927E-15
+           5   1.7807805726106E+04 1.7807805726106E+04 3.0847978033898E-14
+ Comparison of RMS-norms of solution error
+           1   2.1598639971695E+02 2.1598639971695E+02 2.1054443774349E-14
+           2   1.5578955923987E+01 1.5578955923986E+01 1.3568718270983E-14
+           3   5.4131886307721E+01 5.4131886307721E+01 2.6252280651035E-15
+           4   4.8226264315405E+01 4.8226264315405E+01 1.9153578855849E-15
+           5   4.5590291004327E+02 4.5590291004325E+02 3.7155583891565E-14
+ Comparison of surface integral
+               6.6640455357218E+01 6.6640455357218E+01 2.1324666284206E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        C
+ Size            =            162x 162x 162
+ Iterations      =                      250
+ Time in seconds =                   500.88
+ Mop/s total     =                  4070.85
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:  162x 162x 162
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb C
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   1.0376698032354E+04 1.0376698032354E+04 3.5059117994460E-15
+           2   8.9221245880100E+02 8.9221245880101E+02 9.6840159332160E-15
+           3   2.5623881458267E+03 2.5623881458266E+03 1.7214602365309E-14
+           4   2.1919434385783E+03 2.1919434385783E+03 7.6761341951927E-15
+           5   1.7807805726106E+04 1.7807805726106E+04 3.0847978033898E-14
+ Comparison of RMS-norms of solution error
+           1   2.1598639971695E+02 2.1598639971695E+02 2.1054443774349E-14
+           2   1.5578955923987E+01 1.5578955923986E+01 1.3568718270983E-14
+           3   5.4131886307721E+01 5.4131886307721E+01 2.6252280651035E-15
+           4   4.8226264315405E+01 4.8226264315405E+01 1.9153578855849E-15
+           5   4.5590291004327E+02 4.5590291004325E+02 3.7155583891565E-14
+ Comparison of surface integral
+               6.6640455357218E+01 6.6640455357218E+01 2.1324666284206E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        C
+ Size            =            162x 162x 162
+ Iterations      =                      250
+ Time in seconds =                  3047.49
+ Mop/s total     =                   669.07
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+
+
+ NAS Parallel Benchmarks 4.1 Serial C++ version - LU Benchmark
+
+ Size:  162x 162x 162
+ Iterations:  250
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class_npb C
+ Accuracy setting for epsilon =  1.0000000000000E-08
+ Comparison of RMS-norms of residual
+           1   1.0376698032354E+04 1.0376698032354E+04 3.5059117994460E-15
+           2   8.9221245880100E+02 8.9221245880101E+02 9.6840159332160E-15
+           3   2.5623881458267E+03 2.5623881458266E+03 1.7214602365309E-14
+           4   2.1919434385783E+03 2.1919434385783E+03 7.6761341951927E-15
+           5   1.7807805726106E+04 1.7807805726106E+04 3.0847978033898E-14
+ Comparison of RMS-norms of solution error
+           1   2.1598639971695E+02 2.1598639971695E+02 2.1054443774349E-14
+           2   1.5578955923987E+01 1.5578955923986E+01 1.3568718270983E-14
+           3   5.4131886307721E+01 5.4131886307721E+01 2.6252280651035E-15
+           4   4.8226264315405E+01 4.8226264315405E+01 1.9153578855849E-15
+           5   4.5590291004327E+02 4.5590291004325E+02 3.7155583891565E-14
+ Comparison of surface integral
+               6.6640455357218E+01 6.6640455357218E+01 2.1324666284206E-16
+ Verification Successful
+
+
+ LU Benchmark Completed
+ class_npb       =                        C
+ Size            =            162x 162x 162
+ Iterations      =                      250
+ Time in seconds =                  1433.72
+ Mop/s total     =                  1422.17
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      4.1
+ Compiler ver    =                   18.1.3
+ Compile date    =              07 Jan 2025
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm 
+    C_INC        = -I../common 
+    CFLAGS       = -O3 -mcmodel=medium -fopenmp
+    CLINKFLAGS   = -O3 -mcmodel=medium -fopenmp
+    RAND         = (none)
+
+
+----------------------------------------------------------------------
+    NPB-CPP is developed by: 
+        Dalvan Griebler
+        Gabriell Araujo (Sequential Porting)
+        Júnior Löff (Parallel Implementation)
+
+    In case of questions or problems, please send an e-mail to us:
+        dalvan.griebler; gabriell.araujo; junior.loff@edu.pucrs.br
+----------------------------------------------------------------------
+
+python ../../plot.py $(pwd)
+Traceback (most recent call last):
+  File "/home/lukas/git/benchmark_harness/scaling/NPB/LU/../../plot.py", line 4, in <module>
+    from matplotlib import pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+make: *** [Makefile:61: plot] Fehler 1

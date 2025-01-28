@@ -34,7 +34,7 @@ prepare:
 compile: clean prepare
 	echo "LOWER: ${BENCHMARK_NAME_LOWERCASE}"
 	echo "BASEDIR: ${BASEDIR}"
-	for INPUT in S A ; do \
+	for INPUT in S A B C ; do \
 		echo "INPUT: $${INPUT}" ; \
 		echo "PWD1: $$(pwd)" ; \
 		cd ${BASEDIR} && cd ${BENCHMARK_NAME}_orig_with_metadata_* && CC="clang++ -fopenmp" make ${BENCHMARK_NAME_LOWERCASE} CLASS=$${INPUT} && cd .. || true ; \
@@ -45,7 +45,7 @@ compile: clean prepare
 	done
 
 execute:
-	for input in S A ; do \
+	for input in S A B C ; do \
 		echo "$$input" >> measurements_inputs.csv ; \
 		/usr/bin/time --append -o measurements_sequential.csv --format=";%e;" sequential/bin/${BENCHMARK_NAME_LOWERCASE}.$$input || true ; \
 		/usr/bin/time --append -o measurements_vanilla.csv --format="%e;" ${BENCHMARK_NAME}_orig_without_metadata_*/bin/${BENCHMARK_NAME_LOWERCASE}.$$input || true  ; \

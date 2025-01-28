@@ -1,4 +1,0 @@
-1	/home/lukas/git/benchmark_harness/explorer_only/burkardt/md/md_orig_with_metadata/md.cpp
-2	/usr/include/c++/12/cmath
-3	/usr/include/c++/12/iomanip
-4	/usr/include/c++/12/iostream

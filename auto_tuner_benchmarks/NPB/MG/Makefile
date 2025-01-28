@@ -3,7 +3,7 @@ BENCHMARK_NAME_LOWERCASE=$$(echo ${BENCHMARK_NAME} | tr '[:upper:]' '[:lower:]')
 
 all: cpu
 
-cpu: clean copy_code execute_hotspot_detection execute_dynamic_analysis create_code_version_with_metadata create_code_version_without_metadata execute_pattern_analysis_with_metadata execute_pattern_analysis_without_metadata execute_sanity_checker_with_metadata execute_sanity_checker_without_metadata execute_auto_tuner_with_metadata execute_auto_tuner_without_metadata execute_parallel_reference
+cpu: clean copy_code execute_hotspot_detection execute_dynamic_analysis create_code_version_with_metadata create_code_version_without_metadata execute_pattern_analysis_with_metadata execute_pattern_analysis_without_metadata execute_auto_tuner_with_metadata execute_auto_tuner_without_metadata execute_parallel_reference # execute_sanity_checker_with_metadata execute_sanity_checker_without_metadata
 
 clean: 
 	rm -rvf ${BENCHMARK_NAME}_*
@@ -23,6 +23,7 @@ execute_dynamic_analysis:
 	cd ${BENCHMARK_NAME}_orig && make clean
 	cd ${BENCHMARK_NAME}_orig && DOT_DISCOPOP=$$(pwd)/bin/.discopop CXX=discopop_cxx CC=discopop_cc make ${BENCHMARK_NAME_LOWERCASE} CLASS=S
 	cd ${BENCHMARK_NAME}_orig/bin && ./${BENCHMARK_NAME_LOWERCASE}.S
+	cd ${BENCHMARK_NAME}_orig/bin/.discopop && discopop_preprocessor --log info
 
 create_code_version_with_metadata:
 	cp -r ${BENCHMARK_NAME}_orig ${BENCHMARK_NAME}_orig_with_metadata
@@ -43,13 +44,17 @@ execute_pattern_analysis_without_metadata:
 
 execute_auto_tuner_with_metadata:
 	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_COMPILE_${BENCHMARK_NAME}.sh DP_COMPILE.sh
+	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_COMPILE_HOTSPOT_${BENCHMARK_NAME}.sh DP_COMPILE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_EXECUTE_${BENCHMARK_NAME}.sh DP_EXECUTE.sh
+	cd ${BENCHMARK_NAME}_orig_with_metadata && cp DP_EXECUTE_HOTSPOT_${BENCHMARK_NAME}.sh DP_EXECUTE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_with_metadata && echo "$$(pwd)"
 	cd ${BENCHMARK_NAME}_orig_with_metadata && discopop_auto_tuner --log debug --project-path $$(pwd) --dot-dp-path $$(pwd)/bin/.discopop
 
 execute_auto_tuner_without_metadata:
 	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_COMPILE_${BENCHMARK_NAME}.sh DP_COMPILE.sh
+	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_COMPILE_HOTSPOT_${BENCHMARK_NAME}.sh DP_COMPILE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_EXECUTE_${BENCHMARK_NAME}.sh DP_EXECUTE.sh
+	cd ${BENCHMARK_NAME}_orig_without_metadata && cp DP_EXECUTE_HOTSPOT_${BENCHMARK_NAME}.sh DP_EXECUTE_HOTSPOT.sh
 	cd ${BENCHMARK_NAME}_orig_without_metadata && echo "$$(pwd)"
 	cd ${BENCHMARK_NAME}_orig_without_metadata && discopop_auto_tuner  --log debug --project-path $$(pwd) --dot-dp-path $$(pwd)/bin/.discopop
 

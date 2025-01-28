@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:52.640634527 +0000
+@@ -786,6 +786,7 @@
+ 		zeta=((double)k)/(nz-1);
+ 		for(j=0; j<ny; j++){
+ 			eta=((double)j)/(ny0-1 );
++			#pragma omp parallel for private(i,m,xi) shared(eta,j,k,zeta) 
+ 			for(i=0; i<nx; i++){
+ 				xi=((double)i)/(nx0-1);
+ 				for(m=0; m<5; m++){

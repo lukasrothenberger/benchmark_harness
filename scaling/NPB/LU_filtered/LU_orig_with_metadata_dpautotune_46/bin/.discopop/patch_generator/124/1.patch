@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:55.680880190 +0000
+@@ -811,6 +811,7 @@
+ 	 * xi-direction flux differences
+ 	 * ---------------------------------------------------------------------
+ 	 */
++	#pragma omp parallel for private(i,j,k,m,q,tmp,u21,u21i,u21im1,u31i,u31im1,u41i,u41im1,u51i,u51im1) 
+ 	for(k=1; k<nz-1; k++){
+ 		for(j=jst; j<jend; j++){
+ 			for(i=0; i<nx; i++){

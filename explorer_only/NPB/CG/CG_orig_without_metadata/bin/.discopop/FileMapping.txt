@@ -1,5 +1,0 @@
-1	/home/lukas/git/benchmark_harness/explorer_only/NPB/CG/CG_orig_without_metadata/CG/cg.cpp
-2	/home/lukas/git/benchmark_harness/explorer_only/NPB/CG/CG_orig_without_metadata/common/c_print_results.cpp
-3	/home/lukas/git/benchmark_harness/explorer_only/NPB/CG/CG_orig_without_metadata/common/c_randdp.cpp
-4	/home/lukas/git/benchmark_harness/explorer_only/NPB/CG/CG_orig_without_metadata/common/c_timers.cpp
-5	/home/lukas/git/benchmark_harness/explorer_only/NPB/CG/CG_orig_without_metadata/common/wtime.cpp

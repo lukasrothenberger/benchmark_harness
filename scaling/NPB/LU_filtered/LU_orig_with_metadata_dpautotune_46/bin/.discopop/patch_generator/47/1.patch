@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:52.436618042 +0000
+@@ -1871,6 +1871,7 @@
+ 			phi2[k][i]=0.0;
+ 		}
+ 	}
++	#pragma omp parallel for private(i,j,k) shared(ibeg,ifin,jfin,phi1,phi2) 
+ 	for(j=jbeg; j<jfin; j++){
+ 		for(i=ibeg; i<ifin; i++){
+ 			k=ki1;

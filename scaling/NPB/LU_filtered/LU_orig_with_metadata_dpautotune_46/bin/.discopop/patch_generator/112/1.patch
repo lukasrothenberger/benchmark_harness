@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:55.128835582 +0000
+@@ -2495,6 +2495,7 @@
+ 	 * set the dependent variable values along north and south faces
+ 	 * ---------------------------------------------------------------------
+ 	 */
++	#pragma omp parallel for private(i,k) shared(temp1,temp2) 
+ 	for(k=0; k<nz; k++){
+ 		for(i=0; i<nx; i++){
+ 			exact(i, 0, k, temp1);

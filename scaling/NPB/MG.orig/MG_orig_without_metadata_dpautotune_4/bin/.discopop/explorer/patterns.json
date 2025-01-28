@@ -1,0 +1,461 @@
+{
+  "version": "4.0.1",
+  "patterns": {
+    "optimizer_output": [],
+    "merged_pattern": [],
+    "reduction": [],
+    "do_all": [
+      {
+        "pattern_id": 0,
+        "node_id": "1:235",
+        "start_line": "1:1125",
+        "end_line": "1:1127",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1125-1:1127_p(['i1'])_s(['i2', 'i3', 'n1', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 27,
+        "iterations_count": 192776,
+        "entries": 7004,
+        "workload": 518,
+        "per_iteration_workload": 15,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1"
+        ],
+        "last_private": [],
+        "shared": [
+          "i2",
+          "i3",
+          "n1",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 1,
+        "node_id": "1:232",
+        "start_line": "1:1124",
+        "end_line": "1:1128",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1124-1:1128_p(['i1', 'i2'])_s(['i3', 'n1', 'n2', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 21,
+        "iterations_count": 7004,
+        "entries": 326,
+        "workload": 11030,
+        "per_iteration_workload": 521,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1",
+          "i2"
+        ],
+        "last_private": [],
+        "shared": [
+          "i3",
+          "n1",
+          "n2",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 2,
+        "node_id": "1:480",
+        "start_line": "1:486",
+        "end_line": "1:489",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:486-1:489_p(['i2'])_s(['i3', 'n1', 'n2', 'u'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 23,
+        "iterations_count": 24536,
+        "entries": 1048,
+        "workload": 1362,
+        "per_iteration_workload": 54,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i2"
+        ],
+        "last_private": [],
+        "shared": [
+          "i3",
+          "n1",
+          "n2",
+          "u"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 3,
+        "node_id": "1:376",
+        "start_line": "1:911",
+        "end_line": "1:916",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:911-1:916_p(['i1'])_s(['i2', 'i3', 'n1', 'u', 'u1', 'u2'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 31,
+        "iterations_count": 444512,
+        "entries": 13968,
+        "workload": 4438,
+        "per_iteration_workload": 139,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1"
+        ],
+        "last_private": [],
+        "shared": [
+          "i2",
+          "i3",
+          "n1",
+          "u",
+          "u1",
+          "u2"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 4,
+        "node_id": "1:314",
+        "start_line": "1:1256",
+        "end_line": "1:1258",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1256-1:1258_p(['i1'])_s(['i2', 'i3', 'n1', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 34,
+        "iterations_count": 78608,
+        "entries": 2312,
+        "workload": 651,
+        "per_iteration_workload": 15,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1"
+        ],
+        "last_private": [],
+        "shared": [
+          "i2",
+          "i3",
+          "n1",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 7,
+        "node_id": "1:502",
+        "start_line": "1:500",
+        "end_line": "1:503",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:500-1:503_p(['i1'])_s(['i2', 'n1', 'n3', 'u'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 24,
+        "iterations_count": 29024,
+        "entries": 1196,
+        "workload": 1397,
+        "per_iteration_workload": 54,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1"
+        ],
+        "last_private": [],
+        "shared": [
+          "i2",
+          "n1",
+          "n3",
+          "u"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 5,
+        "node_id": "1:260",
+        "start_line": "1:1172",
+        "end_line": "1:1176",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1172-1:1176_p(['i2', 'xx'])_s(['a1', 'd1', 'e2', 'i3', 'x1', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 32,
+        "iterations_count": 2048,
+        "entries": 64,
+        "workload": 741,
+        "per_iteration_workload": 19,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i2",
+          "xx"
+        ],
+        "last_private": [],
+        "shared": [
+          "a1",
+          "d1",
+          "e2",
+          "i3",
+          "x1",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 6,
+        "node_id": "1:611",
+        "start_line": "1:825",
+        "end_line": "1:830",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:825-1:830_p(['i1'])_s(['i2', 'i3', 'n1', 'r', 'r1', 'r2'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 29,
+        "iterations_count": 200880,
+        "entries": 6820,
+        "workload": 4152,
+        "per_iteration_workload": 139,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1"
+        ],
+        "last_private": [],
+        "shared": [
+          "i2",
+          "i3",
+          "n1",
+          "r",
+          "r1",
+          "r2"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 9,
+        "node_id": "1:499",
+        "start_line": "1:499",
+        "end_line": "1:504",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:499-1:504_p(['i1', 'i2'])_s(['n1', 'n2', 'n3', 'u'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 16,
+        "iterations_count": 1196,
+        "entries": 74,
+        "workload": 22469,
+        "per_iteration_workload": 1400,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1",
+          "i2"
+        ],
+        "last_private": [],
+        "shared": [
+          "n1",
+          "n2",
+          "n3",
+          "u"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 8,
+        "node_id": "1:311",
+        "start_line": "1:1255",
+        "end_line": "1:1259",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1255-1:1259_p(['i1', 'i2'])_s(['i3', 'n1', 'n2', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 34,
+        "iterations_count": 2312,
+        "entries": 68,
+        "workload": 22377,
+        "per_iteration_workload": 654,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1",
+          "i2"
+        ],
+        "last_private": [],
+        "shared": [
+          "i3",
+          "n1",
+          "n2",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 10,
+        "node_id": "1:488",
+        "start_line": "1:492",
+        "end_line": "1:497",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:492-1:497_p(['i1', 'i3'])_s(['n1', 'n2', 'n3', 'u'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 14,
+        "iterations_count": 1048,
+        "entries": 74,
+        "workload": 20487,
+        "per_iteration_workload": 1458,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1",
+          "i3"
+        ],
+        "last_private": [],
+        "shared": [
+          "n1",
+          "n2",
+          "n3",
+          "u"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 12,
+        "node_id": "1:477",
+        "start_line": "1:485",
+        "end_line": "1:490",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:485-1:490_p(['i2', 'i3'])_s(['n1', 'n2', 'n3', 'u'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 14,
+        "iterations_count": 1048,
+        "entries": 74,
+        "workload": 19185,
+        "per_iteration_workload": 1365,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i2",
+          "i3"
+        ],
+        "last_private": [],
+        "shared": [
+          "n1",
+          "n2",
+          "n3",
+          "u"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 11,
+        "node_id": "1:491",
+        "start_line": "1:493",
+        "end_line": "1:496",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:493-1:496_p(['i1'])_s(['i3', 'n1', 'n2', 'u'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 25,
+        "iterations_count": 26632,
+        "entries": 1048,
+        "workload": 1455,
+        "per_iteration_workload": 54,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1"
+        ],
+        "last_private": [],
+        "shared": [
+          "i3",
+          "n1",
+          "n2",
+          "u"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 13,
+        "node_id": "1:229",
+        "start_line": "1:1123",
+        "end_line": "1:1129",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1123-1:1129_p(['i1', 'i2', 'i3'])_s(['n1', 'n2', 'n3', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 13,
+        "iterations_count": 326,
+        "entries": 24,
+        "workload": 143486,
+        "per_iteration_workload": 11033,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "last_private": [],
+        "shared": [
+          "n1",
+          "n2",
+          "n3",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      },
+      {
+        "pattern_id": 14,
+        "node_id": "1:308",
+        "start_line": "1:1254",
+        "end_line": "1:1260",
+        "applicable_pattern": true,
+        "pattern_tag": "DoAllInfo@1:1254-1:1260_p(['i1', 'i2', 'i3'])_s(['n1', 'n2', 'n3', 'z'])_fp([])_r([])_lp([])",
+        "average_iteration_count": 34,
+        "iterations_count": 68,
+        "entries": 2,
+        "workload": 761061,
+        "per_iteration_workload": 22380,
+        "device_id": null,
+        "device_type": null,
+        "first_private": [],
+        "private": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "last_private": [],
+        "shared": [
+          "n1",
+          "n2",
+          "n3",
+          "z"
+        ],
+        "reduction": [],
+        "scheduling_clause": "static",
+        "collapse_level": 1
+      }
+    ]
+  }
+}

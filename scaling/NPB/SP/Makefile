@@ -48,9 +48,12 @@ execute:
 	for input in S A ; do \
 		echo "$$input" >> measurements_inputs.csv ; \
 		/usr/bin/time --append -o measurements_sequential.csv --format=";%e;" sequential/bin/${BENCHMARK_NAME_LOWERCASE}.$$input || true ; \
-		/usr/bin/time --append -o measurements_vanilla.csv --format="%e;" ${BENCHMARK_NAME}_orig_without_metadata_*/bin/${BENCHMARK_NAME_LOWERCASE}.$$input || true  ; \
 		/usr/bin/time --append -o measurements_extended.csv --format="%e;" ${BENCHMARK_NAME}_orig_with_metadata_*/bin/${BENCHMARK_NAME_LOWERCASE}.$$input || true ; \
     done
+
+
+
+#/usr/bin/time --append -o measurements_vanilla.csv --format="%e;" ${BENCHMARK_NAME}_orig_without_metadata_*/bin/${BENCHMARK_NAME_LOWERCASE}.$$input || true  ; \
 
 # 	correct formatting for google slides
 #	sed -i -e 's/\./,/g' measurements_sequential.csv

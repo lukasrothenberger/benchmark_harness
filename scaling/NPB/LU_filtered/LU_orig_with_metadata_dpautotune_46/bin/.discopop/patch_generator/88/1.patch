@@ -1,0 +1,10 @@
+--- /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp	2024-12-18 13:54:44.426783523 +0000
++++ /home/lukasrothenberger/git/benchmark_harness/auto_tuner_benchmarks/NPB/LU/LU_orig_with_metadata/LU/lu.cpp.discopop_patch_generator.temp	2024-12-18 14:00:54.228762852 +0000
+@@ -2372,6 +2372,7 @@
+ 						-tz2*(flux[k+1][m]-flux[k-1][m]);
+ 				}
+ 			}
++			#pragma omp parallel for private(k,tmp,u21k,u21km1,u31k,u31km1,u41k,u41km1,u51k,u51km1) shared(utmp) 
+ 			for(k=1; k<nz; k++){
+ 				tmp=utmp[k][5];
+ 				u21k=tmp*utmp[k][1];

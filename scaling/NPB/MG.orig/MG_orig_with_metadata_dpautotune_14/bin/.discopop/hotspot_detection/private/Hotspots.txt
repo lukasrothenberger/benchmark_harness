@@ -1,0 +1,143 @@
+Is this code region a hotspot? 
+1  at 1:144 is NO
+7  at 1:296 is NO
+8  at 1:306 is MAYBE
+10 main at 1:119 is MAYBE
+11  at 1:1041 is NO
+13  at 1:1046 is NO
+14  at 1:1052 is NO
+15  at 1:1053 is NO
+17 _ZL5setupPiS_S_i at 1:1032 is NO
+18  at 1:1123 is MAYBE
+19  at 1:1124 is MAYBE
+20  at 1:1125 is MAYBE
+21 _ZL5zero3Pviii at 1:1114 is MAYBE
+22  at 1:1170 is MAYBE
+23  at 1:1172 is MAYBE
+24  at 1:1185 is NO
+25  at 1:1195 is MAYBE
+26  at 1:1196 is MAYBE
+27  at 1:1197 is MAYBE
+28  at 1:1223 is NO
+29  at 1:1254 is MAYBE
+30  at 1:1255 is MAYBE
+31  at 1:1256 is MAYBE
+34 _ZL5zran3Pviiiiii at 1:1139 is MAYBE
+35  at 1:756 is MAYBE
+36  at 1:757 is MAYBE
+37  at 1:758 is MAYBE
+38 _ZL7norm2u3PviiiPdS0_iii at 1:738 is MAYBE
+39  at 1:909 is MAYBE
+40  at 1:910 is MAYBE
+41  at 1:911 is MAYBE
+42  at 1:917 is MAYBE
+43 _ZL5residPvS_S_iiiPdi at 1:891 is MAYBE
+44  at 1:685 is MAYBE
+45  at 1:699 is MAYBE
+46 _ZL4mg3PPdS_S_S_S_iiii at 1:676 is MAYBE
+47  at 1:786 is NO
+48 _ZL5powerdi at 1:776 is NO
+49  at 1:423 is NO
+51 _ZL6bubblePA10_dPA10_iS2_S2_ii at 1:418 is MAYBE
+52  at 1:485 is MAYBE
+53  at 1:486 is MAYBE
+54  at 1:492 is MAYBE
+55  at 1:493 is MAYBE
+56  at 1:499 is MAYBE
+57  at 1:500 is MAYBE
+58 _ZL5comm3Pviiii at 1:474 is MAYBE
+64  at 1:993 is MAYBE
+65  at 1:995 is MAYBE
+66  at 1:997 is MAYBE
+67  at 1:1004 is MAYBE
+68 _ZL5rprj3PviiiS_iiii at 1:962 is MAYBE
+69  at 1:823 is MAYBE
+70  at 1:824 is MAYBE
+71  at 1:825 is MAYBE
+72  at 1:831 is MAYBE
+73 _ZL5psinvPvS_iiiPdi at 1:808 is MAYBE
+74  at 1:545 is MAYBE
+75  at 1:546 is MAYBE
+76  at 1:547 is MAYBE
+77  at 1:552 is MAYBE
+78  at 1:558 is MAYBE
+79  at 1:564 is MAYBE
+80  at 1:570 is MAYBE
+95 _ZL6interpPviiiS_iiii at 1:520 is MAYBE
+96 _Z15c_print_resultsPcciiiiddS_iS_S_S_S_S_S_S_S_S_S_ at 2:70 is NO
+97 _Z6randlcPdd at 3:80 is MAYBE
+98  at 3:155 is YES
+99 _Z6vranlciPddS_ at 3:136 is YES
+100 _Z12elapsed_timev at 4:53 is NO
+101 _Z11timer_cleari at 4:64 is NO
+102 _Z11timer_starti at 4:71 is NO
+103 _Z10timer_stopi at 4:78 is NO
+105 _Z6wtime_Pd at 5:47 is NO
+106  at 1:144 is NO
+112  at 1:296 is NO
+113  at 1:306 is YES
+115 main at 1:119 is YES
+116  at 1:1041 is NO
+118  at 1:1046 is NO
+119  at 1:1052 is NO
+120  at 1:1053 is NO
+122 _ZL5setupPiS_S_i at 1:1032 is NO
+123  at 1:1123 is MAYBE
+124  at 1:1124 is MAYBE
+125  at 1:1125 is MAYBE
+126 _ZL5zero3Pviii at 1:1114 is MAYBE
+127  at 1:1170 is YES
+128  at 1:1172 is YES
+130  at 1:1195 is MAYBE
+131  at 1:1196 is MAYBE
+132  at 1:1197 is MAYBE
+133  at 1:1223 is NO
+134  at 1:1254 is MAYBE
+135  at 1:1255 is MAYBE
+136  at 1:1256 is MAYBE
+137  at 1:1261 is NO
+139 _ZL5zran3Pviiiiii at 1:1139 is YES
+140  at 1:756 is YES
+141  at 1:757 is YES
+142  at 1:758 is YES
+143 _ZL7norm2u3PviiiPdS0_iii at 1:738 is YES
+144  at 1:909 is YES
+145  at 1:910 is YES
+146  at 1:911 is YES
+147  at 1:917 is YES
+148 _ZL5residPvS_S_iiiPdi at 1:891 is YES
+149  at 1:685 is MAYBE
+150  at 1:699 is YES
+151 _ZL4mg3PPdS_S_S_S_iiii at 1:676 is YES
+152  at 1:786 is NO
+153 _ZL5powerdi at 1:776 is NO
+156 _ZL6bubblePA10_dPA10_iS2_S2_ii at 1:418 is MAYBE
+157  at 1:485 is MAYBE
+158  at 1:486 is MAYBE
+159  at 1:492 is MAYBE
+160  at 1:493 is MAYBE
+161  at 1:499 is MAYBE
+162  at 1:500 is MAYBE
+163 _ZL5comm3Pviiii at 1:474 is MAYBE
+169  at 1:993 is MAYBE
+170  at 1:995 is MAYBE
+171  at 1:997 is MAYBE
+172  at 1:1004 is MAYBE
+173 _ZL5rprj3PviiiS_iiii at 1:962 is MAYBE
+174  at 1:823 is YES
+175  at 1:824 is YES
+176  at 1:825 is YES
+177  at 1:831 is YES
+178 _ZL5psinvPvS_iiiPdi at 1:808 is YES
+179  at 1:545 is YES
+180  at 1:546 is YES
+181  at 1:547 is MAYBE
+182  at 1:552 is MAYBE
+183  at 1:558 is MAYBE
+184  at 1:564 is MAYBE
+185  at 1:570 is MAYBE
+200 _ZL6interpPviiiS_iiii at 1:520 is YES
+Number of YES code regions: 26 
+Number of MAYBE code regions: 83 
+Number of NO code regions: 29 
+Number of Non-zero code regions: 138 
